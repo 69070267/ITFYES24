@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODPICKER-ITF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">69070267</div>
+        <div class="nav-title">FOODPICKER-ITF</div>
+        <div class="nav-right">Week17</div>
+    </nav>
+
+    <main class="main-content">
+        <button class="roll-button" onclick="rollFood()">ROLL FOOD</button>
+        <div class="result" id="result"></div>
+    </main>
+
+    <script>
+        const foods = [
+            { name: "Pad Thai", price: 60, image: "https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400&h=300&fit=crop", details: "Stir-fried rice noodles with shrimp, egg, peanuts & tamarind sauce" },
+            { name: "Green Curry (Gaeng Keow Wan)", price: 70, image: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400&h=300&fit=crop", details: "Spicy coconut curry with chicken, eggplant & Thai basil" },
+            { name: "Tom Yum Goong", price: 65, image: "https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=400&h=300&fit=crop", details: "Hot & sour soup with prawns, lemongrass & galangal" },
+            { name: "Pad Kra Pao (Stir-fried Basil)", price: 55, image: "https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?w=400&h=300&fit=crop", details: "Spicy stir-fry with minced pork, holy basil & chili" },
+            { name: "Som Tum (Papaya Salad)", price: 50, image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=400&h=300&fit=crop", details: "Fresh papaya salad with tomatoes, peanuts & lime dressing" },
+            { name: "Massaman Curry", price: 75, image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop", details: "Mild sweet curry with beef, potatoes & roasted peanuts" },
+            { name: "Khao Soi", price: 70, image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop", details: "Northern Thai curry noodle soup with crispy noodles" },
+            { name: "Pad See Ew", price: 60, image: "https://images.unsplash.com/photo-1617196034183-421b4917c92d?w=400&h=300&fit=crop", details: "Wide rice noodles stir-fried with soy sauce & Chinese broccoli" },
+            { name: "Tom Kha Gai", price: 65, image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop", details: "Creamy coconut soup with chicken, galangal & mushrooms" },
+            { name: "Moo Satay", price: 60, image: "https://images.unsplash.com/photo-1529563021893-cc83c992d75d?w=400&h=300&fit=crop", details: "Grilled pork skewers served with peanut sauce & cucumber" }
+        ];
+
+        function rollFood() {
+            const randomIndex = Math.floor(Math.random() * foods.length);
+            const food = foods[randomIndex];
+            document.getElementById('result').innerHTML = 
+                "<img src='" + food.image + "' alt='" + food.name + "' class='food-image'>" +
+                "<div class='food-name'>" + food.name + "</div>" +
+                "<div class='food-price'>" + food.price + " THB</div>" +
+                "<div class='food-details'>" + food.details + "</div>";
+        }
+    </script>
+</body>
+</html>
